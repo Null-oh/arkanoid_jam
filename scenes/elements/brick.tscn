@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://ciodxunuhar6a"]
+
+[ext_resource type="Script" uid="uid://dkwthi2psxwgk" path="res://scenes/elements/brick.gd" id="1_1v7ys"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_phcul"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3yc3"]
+size = Vector2(72, 38)
+
+[node name="Brick" type="StaticBody2D" unique_id=639669360]
+physics_material_override = SubResource("PhysicsMaterial_phcul")
+script = ExtResource("1_1v7ys")
+
+[node name="temp_texture" type="ColorRect" parent="." unique_id=790757671]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -17.5
+offset_right = 35.0
+offset_bottom = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="collision" type="Area2D" parent="." unique_id=93420127]
+
+[node name="shape" type="CollisionShape2D" parent="collision" unique_id=868371358]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_j3yc3")
+debug_color = Color(0.8457539, 0.00025143503, 0.763467, 0.41960785)
+
+[node name="shape" type="CollisionShape2D" parent="." unique_id=1610127035]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_j3yc3")
+debug_color = Color(0.8457539, 0.00025143503, 0.763467, 0.41960785)
+
+[connection signal="body_entered" from="collision" to="." method="_on_collision_body_entered"]

@@ -11,13 +11,20 @@ config_version=5
 [application]
 
 config/name="arkanoid_jam"
+run/main_scene="uid://bnab2gxtqsh1"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://d4esx8wxlpsbs"
+
 [display]
 
-window/stretch/mode="canvas_items"
+window/size/viewport_width=500
+window/size/viewport_height=800
 window/stretch/aspect="expand"
+window/handheld/orientation=1
 
 [physics]
 

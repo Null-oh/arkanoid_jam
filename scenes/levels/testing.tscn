@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://oyn3w31ftr5y"]
+
+[ext_resource type="PackedScene" uid="uid://ciodxunuhar6a" path="res://scenes/elements/brick.tscn" id="1_i1vqv"]
+[ext_resource type="PackedScene" uid="uid://tb1uixtl4kok" path="res://scenes/elements/ball.tscn" id="2_3mgey"]
+[ext_resource type="Script" uid="uid://vua4u7bihsl6" path="res://scenes/utility/debug_label.gd" id="3_3mgey"]
+[ext_resource type="PackedScene" uid="uid://cwgssm1qeea48" path="res://scenes/elements/ramp.tscn" id="4_x2n3b"]
+
+[node name="Testing" type="Node2D" unique_id=1601398103]
+
+[node name="Ball" parent="." unique_id=445269483 node_paths=PackedStringArray("ramp") instance=ExtResource("2_3mgey")]
+position = Vector2(25, -68)
+ramp = NodePath("../Ramp")
+
+[node name="debug" type="CanvasLayer" parent="." unique_id=2020578861]
+script = ExtResource("3_3mgey")
+
+[node name="ColorRect" type="ColorRect" parent="debug" unique_id=1993979821]
+offset_left = -501.0
+offset_top = -870.0
+offset_right = -308.0
+offset_bottom = -830.0
+color = Color(0.581033, 0.58103293, 0.5810329, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="debug/ColorRect" unique_id=1188014238]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1085560151]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=60168538]
+polygon = PackedVector2Array(-250, -401, 254, -401, 255, 403, -256, 406, -259, -418, -288, -421, -279, 421, 290, 432, 277, -426, -244, -427)
+
+[node name="bricks" type="Node2D" parent="." unique_id=1170687560]
+
+[node name="Brick" parent="bricks" unique_id=639669360 instance=ExtResource("1_i1vqv")]
+position = Vector2(-204, -369)
+ingredient = "sugar"
+
+[node name="Brick2" parent="bricks" unique_id=1459240909 instance=ExtResource("1_i1vqv")]
+position = Vector2(-73, -316)
+ingredient = "sugar"
+
+[node name="Brick3" parent="bricks" unique_id=737651531 instance=ExtResource("1_i1vqv")]
+position = Vector2(8, -320)
+ingredient = "apple"
+
+[node name="Brick4" parent="bricks" unique_id=980055187 instance=ExtResource("1_i1vqv")]
+position = Vector2(98, -318)
+ingredient = "sugar"
+
+[node name="Brick5" parent="bricks" unique_id=1248265343 instance=ExtResource("1_i1vqv")]
+position = Vector2(-30, -372)
+ingredient = "apple"
+
+[node name="Brick6" parent="bricks" unique_id=741681694 instance=ExtResource("1_i1vqv")]
+position = Vector2(-163, -314)
+ingredient = "apple"
+
+[node name="Brick7" parent="bricks" unique_id=267883735 instance=ExtResource("1_i1vqv")]
+position = Vector2(215, -373)
+ingredient = "sugar"
+
+[node name="Brick8" parent="bricks" unique_id=87743092 instance=ExtResource("1_i1vqv")]
+position = Vector2(-119, -369)
+ingredient = "apple"
+
+[node name="Brick9" parent="bricks" unique_id=945516631 instance=ExtResource("1_i1vqv")]
+position = Vector2(135, -373)
+ingredient = "apple"
+
+[node name="Brick10" parent="bricks" unique_id=1195134303 instance=ExtResource("1_i1vqv")]
+position = Vector2(54, -375)
+ingredient = "apple"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=81810935]
+
+[node name="Ramp" parent="." unique_id=1870165492 instance=ExtResource("4_x2n3b")]
+position = Vector2(-2, 378)
+
+[node name="interface" type="Control" parent="." unique_id=1680182990]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="pause" type="MarginContainer" parent="interface" unique_id=988008291]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="fail" type="MarginContainer" parent="interface" unique_id=151694468]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

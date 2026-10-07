@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dx5k3d515vnr7"]
+
+[ext_resource type="PackedScene" uid="uid://cwgssm1qeea48" path="res://scenes/elements/ramp.tscn" id="1_yx8f7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v4v25"]
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j3yc3"]
+radius = 18.110771
+
+[node name="Node2D" type="Node2D" unique_id=1790128407]
+
+[node name="Ramp" parent="." unique_id=1870165492 instance=ExtResource("1_yx8f7")]
+position = Vector2(249, 601)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1393488866]
+physics_material_override = SubResource("PhysicsMaterial_v4v25")
+gravity_scale = 0.3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1268889064]
+position = Vector2(234, 232)
+shape = SubResource("CircleShape2D_j3yc3")

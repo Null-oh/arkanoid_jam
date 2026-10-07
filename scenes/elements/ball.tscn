@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://tb1uixtl4kok"]
+
+[ext_resource type="Script" uid="uid://c25ndeim47n8c" path="res://scenes/elements/ball.gd" id="1_phcul"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_i1vqv"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j3yc3"]
+
+[node name="Ball" type="RigidBody2D" unique_id=445269483]
+physics_material_override = SubResource("PhysicsMaterial_i1vqv")
+gravity_scale = 0.0
+script = ExtResource("1_phcul")
+speed = 500.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1597166018]
+shape = SubResource("CircleShape2D_j3yc3")
+debug_color = Color(0, 0.76862746, 0, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
