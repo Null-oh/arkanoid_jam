@@ -1,0 +1,230 @@
+[gd_scene format=3 uid="uid://bfathjtreo2v0"]
+
+[ext_resource type="Script" uid="uid://du11l155rhcid" path="res://scenes/utility/level_interface.gd" id="1_d5gdc"]
+[ext_resource type="PackedScene" uid="uid://drhy4w2slw5yq" path="res://scenes/elements/goal_slot.tscn" id="2_rva1a"]
+
+[node name="basic_interface" type="CanvasLayer" unique_id=2042947597]
+script = ExtResource("1_d5gdc")
+
+[node name="start" type="MarginContainer" parent="." unique_id=554373298]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 200
+
+[node name="NinePatchRect" type="NinePatchRect" parent="start" unique_id=1909699849]
+layout_mode = 2
+
+[node name="temp" type="ColorRect" parent="start/NinePatchRect" unique_id=644312037]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.50980395, 0.50980395, 0.50980395, 1)
+
+[node name="temp_start" type="Button" parent="start" unique_id=478622883]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "START"
+
+[node name="fail" type="MarginContainer" parent="." unique_id=1833596215]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 200
+
+[node name="NinePatchRect" type="NinePatchRect" parent="fail" unique_id=1301723347]
+layout_mode = 2
+
+[node name="temp" type="ColorRect" parent="fail/NinePatchRect" unique_id=1197363822]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.51007515, 0.51007515, 0.51007515, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="fail/NinePatchRect" unique_id=682063646]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="fail/NinePatchRect/MarginContainer" unique_id=527178187]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Label" type="Label" parent="fail/NinePatchRect/MarginContainer/VBoxContainer" unique_id=780017621]
+layout_mode = 2
+text = "LOST"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="retry" type="Button" parent="fail/NinePatchRect/MarginContainer/VBoxContainer" unique_id=2034611671]
+layout_mode = 2
+text = "RETRY"
+
+[node name="exit" type="Button" parent="fail/NinePatchRect/MarginContainer/VBoxContainer" unique_id=968529458]
+layout_mode = 2
+text = "EXIT"
+
+[node name="win" type="MarginContainer" parent="." unique_id=1718101150]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 200
+
+[node name="NinePatchRect" type="NinePatchRect" parent="win" unique_id=1400346174]
+layout_mode = 2
+
+[node name="temp" type="ColorRect" parent="win/NinePatchRect" unique_id=754711624]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.51007515, 0.51007515, 0.51007515, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="win/NinePatchRect" unique_id=534386786]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="win/NinePatchRect/MarginContainer" unique_id=1809578278]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Label" type="Label" parent="win/NinePatchRect/MarginContainer/VBoxContainer" unique_id=950595880]
+layout_mode = 2
+text = "WIN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="next" type="Button" parent="win/NinePatchRect/MarginContainer/VBoxContainer" unique_id=550369689]
+layout_mode = 2
+text = "NEXT"
+
+[node name="exit" type="Button" parent="win/NinePatchRect/MarginContainer/VBoxContainer" unique_id=1184924366]
+layout_mode = 2
+text = "EXIT"
+
+[node name="header" type="NinePatchRect" parent="." unique_id=651103058]
+custom_minimum_size = Vector2(0, 150)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="temp" type="ColorRect" parent="header" unique_id=267314194]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.50980395, 0.50980395, 0.50980395, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="header" unique_id=756792047]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="header/MarginContainer" unique_id=1181928054]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="progress_jar" type="ProgressBar" parent="header/MarginContainer/HBoxContainer" unique_id=492824036]
+custom_minimum_size = Vector2(65, 100)
+custom_maximum_size = Vector2(-1, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+fill_mode = 3
+show_percentage = false
+
+[node name="goal_info" type="HBoxContainer" parent="header/MarginContainer/HBoxContainer" unique_id=447403545]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="goal_slot" parent="header/MarginContainer/HBoxContainer/goal_info" unique_id=645192039 instance=ExtResource("2_rva1a")]
+layout_mode = 2
+
+[node name="goal_slot2" parent="header/MarginContainer/HBoxContainer/goal_info" unique_id=1485594006 instance=ExtResource("2_rva1a")]
+layout_mode = 2
+
+[node name="goal_slot3" parent="header/MarginContainer/HBoxContainer/goal_info" unique_id=1919045899 instance=ExtResource("2_rva1a")]
+layout_mode = 2
+
+[node name="right_side" type="VBoxContainer" parent="header/MarginContainer/HBoxContainer" unique_id=2081876617]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="header/MarginContainer/HBoxContainer/right_side" unique_id=1479881329]
+layout_mode = 2
+alignment = 1
+
+[node name="lives_icon" type="ColorRect" parent="header/MarginContainer/HBoxContainer/right_side/HBoxContainer" unique_id=611835158]
+custom_minimum_size = Vector2(25, 25)
+custom_maximum_size = Vector2(25, 25)
+layout_mode = 2
+color = Color(1, 1, 0.2, 1)
+
+[node name="lives_label" type="Label" parent="header/MarginContainer/HBoxContainer/right_side/HBoxContainer" unique_id=1134125845]
+custom_minimum_size = Vector2(25, 25)
+custom_maximum_size = Vector2(25, 25)
+layout_mode = 2
+text = "x 3"
+
+[node name="pause" type="Button" parent="header/MarginContainer/HBoxContainer/right_side" unique_id=1645789093]
+custom_minimum_size = Vector2(50, 50)
+custom_maximum_size = Vector2(50, 50)
+layout_mode = 2
+text = "I I"
+
+[connection signal="pressed" from="start/temp_start" to="." method="_on_temp_start_pressed"]
+[connection signal="pressed" from="fail/NinePatchRect/MarginContainer/VBoxContainer/retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="fail/NinePatchRect/MarginContainer/VBoxContainer/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="win/NinePatchRect/MarginContainer/VBoxContainer/next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="win/NinePatchRect/MarginContainer/VBoxContainer/exit" to="." method="_on_exit_pressed"]

@@ -31,11 +31,11 @@ grow_vertical = 2
 [node name="shape" type="CollisionShape2D" parent="collision" unique_id=868371358]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_j3yc3")
-debug_color = Color(0.8457539, 0.00025143503, 0.763467, 0.41960785)
+debug_color = Color(1, 0.87058824, 0.972549, 0.10980392)
 
 [node name="shape" type="CollisionShape2D" parent="." unique_id=1610127035]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_j3yc3")
-debug_color = Color(0.8457539, 0.00025143503, 0.763467, 0.41960785)
+debug_color = Color(1, 0.87058824, 0.972549, 0.10980392)
 
 [connection signal="body_entered" from="collision" to="." method="_on_collision_body_entered"]

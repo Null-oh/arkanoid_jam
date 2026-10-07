@@ -3,7 +3,12 @@ extends Control
 @onready var debug: Label = $debug
 
 func _on_start_pressed() -> void:
-	Global.loading_scene_path = "res://scenes/main.tscn"
+	#ДЕМО - ТЕСТОВЫЙ УРОВЕНЬ
+	Global.loading_scene_path = "res://scenes/levels/testing.tscn"
+	
+	#ЧИСТОВИК:
+	#Global.loading_scene_path = "res://scenes/main.tscn"
+	
 	get_tree().change_scene_to_file("res://scenes/utility/loading_screen.tscn")
 
 func _on_exit_pressed() -> void:

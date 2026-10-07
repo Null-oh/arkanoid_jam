@@ -53,6 +53,15 @@ anchor_right = 1.0
 offset_bottom = 280.0
 grow_horizontal = 2
 
+[node name="Label" type="Label" parent="." unique_id=254331024]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 283.0
+offset_right = 481.0
+offset_bottom = 332.0
+text = "<- временно ведёт 
+     на тестовый уровень"
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/load" to="." method="_on_load_pressed"]

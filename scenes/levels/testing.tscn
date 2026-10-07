@@ -1,11 +1,19 @@
 [gd_scene format=3 uid="uid://oyn3w31ftr5y"]
 
 [ext_resource type="PackedScene" uid="uid://ciodxunuhar6a" path="res://scenes/elements/brick.tscn" id="1_i1vqv"]
+[ext_resource type="Script" uid="uid://dldwelvwdmia" path="res://scenes/levels/basic_level.gd" id="1_pka5m"]
 [ext_resource type="PackedScene" uid="uid://tb1uixtl4kok" path="res://scenes/elements/ball.tscn" id="2_3mgey"]
 [ext_resource type="Script" uid="uid://vua4u7bihsl6" path="res://scenes/utility/debug_label.gd" id="3_3mgey"]
+[ext_resource type="Script" uid="uid://ef14o27uv24x" path="res://scenes/utility/boundries.gd" id="3_mouox"]
 [ext_resource type="PackedScene" uid="uid://cwgssm1qeea48" path="res://scenes/elements/ramp.tscn" id="4_x2n3b"]
+[ext_resource type="PackedScene" uid="uid://bfathjtreo2v0" path="res://scenes/utility/level_interface.tscn" id="7_u2q58"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqba7"]
+size = Vector2(512, 16)
 
 [node name="Testing" type="Node2D" unique_id=1601398103]
+position = Vector2(248, 400)
+script = ExtResource("1_pka5m")
 
 [node name="Ball" parent="." unique_id=445269483 node_paths=PackedStringArray("ramp") instance=ExtResource("2_3mgey")]
 position = Vector2(25, -68)
@@ -31,78 +39,78 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1085560151]
+[node name="boundries" type="StaticBody2D" parent="." unique_id=1085560151]
+script = ExtResource("3_mouox")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=60168538]
-polygon = PackedVector2Array(-250, -401, 254, -401, 255, 403, -256, 406, -259, -418, -288, -421, -279, 421, 290, 432, 277, -426, -244, -427)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="boundries" unique_id=60168538]
+polygon = PackedVector2Array(252, 400, 252, -250, -248, -250, -248, 400, -253, 400, -253, -255, 257, -255, 257, 400)
+
+[node name="death" type="Area2D" parent="boundries" unique_id=388932220]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boundries/death" unique_id=443939493]
+position = Vector2(0, 400)
+shape = SubResource("RectangleShape2D_vqba7")
+debug_color = Color(1, 0, 0.3254902, 0.41960785)
 
 [node name="bricks" type="Node2D" parent="." unique_id=1170687560]
 
 [node name="Brick" parent="bricks" unique_id=639669360 instance=ExtResource("1_i1vqv")]
-position = Vector2(-204, -369)
+position = Vector2(-200, -216)
 ingredient = "sugar"
 
 [node name="Brick2" parent="bricks" unique_id=1459240909 instance=ExtResource("1_i1vqv")]
-position = Vector2(-73, -316)
+position = Vector2(-40, -168)
 ingredient = "sugar"
 
 [node name="Brick3" parent="bricks" unique_id=737651531 instance=ExtResource("1_i1vqv")]
-position = Vector2(8, -320)
+position = Vector2(40, -168)
 ingredient = "apple"
 
 [node name="Brick4" parent="bricks" unique_id=980055187 instance=ExtResource("1_i1vqv")]
-position = Vector2(98, -318)
+position = Vector2(120, -168)
 ingredient = "sugar"
 
 [node name="Brick5" parent="bricks" unique_id=1248265343 instance=ExtResource("1_i1vqv")]
-position = Vector2(-30, -372)
+position = Vector2(-40, -216)
 ingredient = "apple"
 
 [node name="Brick6" parent="bricks" unique_id=741681694 instance=ExtResource("1_i1vqv")]
-position = Vector2(-163, -314)
+position = Vector2(-120, -168)
 ingredient = "apple"
 
 [node name="Brick7" parent="bricks" unique_id=267883735 instance=ExtResource("1_i1vqv")]
-position = Vector2(215, -373)
+position = Vector2(200, -216)
 ingredient = "sugar"
 
 [node name="Brick8" parent="bricks" unique_id=87743092 instance=ExtResource("1_i1vqv")]
-position = Vector2(-119, -369)
+position = Vector2(-120, -216)
 ingredient = "apple"
 
 [node name="Brick9" parent="bricks" unique_id=945516631 instance=ExtResource("1_i1vqv")]
-position = Vector2(135, -373)
+position = Vector2(120, -216)
 ingredient = "apple"
 
 [node name="Brick10" parent="bricks" unique_id=1195134303 instance=ExtResource("1_i1vqv")]
-position = Vector2(54, -375)
+position = Vector2(40, -216)
 ingredient = "apple"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=81810935]
+position = Vector2(-248, -400)
+anchor_mode = 0
 
 [node name="Ramp" parent="." unique_id=1870165492 instance=ExtResource("4_x2n3b")]
 position = Vector2(-2, 378)
 
-[node name="interface" type="Control" parent="." unique_id=1680182990]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="interface" parent="." unique_id=2042947597 instance=ExtResource("7_u2q58")]
 
-[node name="pause" type="MarginContainer" parent="interface" unique_id=988008291]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="goal_slot" parent="interface/header/MarginContainer/HBoxContainer/goal_info" parent_id_path=PackedInt32Array(2042947597, 447403545) index="0" unique_id=645192039]
+ingredient = "sugar"
+amount = 4
 
-[node name="fail" type="MarginContainer" parent="interface" unique_id=151694468]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="goal_slot2" parent="interface/header/MarginContainer/HBoxContainer/goal_info" parent_id_path=PackedInt32Array(2042947597, 447403545) index="1" unique_id=1485594006]
+ingredient = "apple"
+amount = 3
+
+[connection signal="body_entered" from="boundries/death" to="boundries" method="_on_death_body_entered"]
+
+[editable path="interface"]

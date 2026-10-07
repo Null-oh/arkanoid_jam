@@ -27,4 +27,4 @@ grow_vertical = 2
 polygon = PackedVector2Array(100, 0, 97, -10, 85, -20, 70, -28, 50, -35, 26, -39, 0, -40, -26, -39, -50, -35, -70, -28, -85, -20, -97, -10, -100, 0)
 
 [node name="launch" type="Marker2D" parent="." unique_id=1916013657]
-position = Vector2(37, -48)
+position = Vector2(-48, -48)

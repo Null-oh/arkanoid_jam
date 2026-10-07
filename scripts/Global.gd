@@ -10,8 +10,20 @@ var completed_levels : Array[int]
 var broken_bricks : Dictionary[String, int]
 var current_goal : Dictionary[String, int]
 var endless_goal : Dictionary[String, int]
-var extra_lives : int = 0
+var extra_lives : int = 2
 var active_bonuses : Array[String]
+
+func get_goal_progress() -> float:
+	var total : int = 0
+	var have : int = 0
+	
+	for brick in current_goal:
+		total += current_goal[brick]
+		have += mini(broken_bricks.get(brick, 0), current_goal[brick])
+	
+	if total == 0:
+		return 0.0
+	return float(have) / float(total)
 
 #save info
 var device : String = "":
@@ -35,7 +47,7 @@ func reset_current():
 	broken_bricks.clear()
 	current_goal.clear()
 	endless_goal.clear()
-	extra_lives = 0
+	extra_lives = 2
 	active_bonuses = []
 
 func reset_whole():
